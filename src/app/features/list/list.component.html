@@ -1,0 +1,53 @@
+<h3>Produtos</h3>
+
+@if (showButton) {
+    <div class="button-container">
+        <button mat-flat-button color="accent" (click)="toggleInput()">Adicionar Produto</button>
+    </div>
+}
+
+@if (showInput) {
+    <div class="input-container">
+        <form [formGroup]="formAdd" (ngSubmit)="addProduct()">
+            <mat-form-field>
+                <input type="text" matInput formControlName="newProductName" placeholder="Nome do Produto">
+            </mat-form-field>
+
+            <button type="submit" mat-flat-button color="accent">Adicionar</button>
+        </form>
+    </div>
+}
+
+@if (showList) {
+    <ul>
+        @for (product of products; track product.id) {
+            <li>
+                <section class="list-item">
+                    <mat-checkbox [(ngModel)]="product.selected" (change)="moveToPurchased(product)">
+                        {{ product.name }}
+                    </mat-checkbox>
+    
+                    <button mat-icon-button color="warn" (click)="prepareEdit(product)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+    
+                    <button mat-icon-button color="warn" (click)="removeProduct(product.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </section>
+            </li>
+        }
+    </ul>
+}
+
+@if (showEdit) {
+    <div class="input-container">
+        <form [formGroup]="formEdit" (ngSubmit)="updateProduct()">
+            <mat-form-field>
+                <input type="text" matInput formControlName="updatedProductName" placeholder="Nome do Produto">
+            </mat-form-field>
+
+            <button type="submit" mat-flat-button color="accent">Atualizar</button>
+        </form>
+    </div>
+}

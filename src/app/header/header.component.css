@@ -1,0 +1,9 @@
+.title {
+    text-align: center;
+}
+
+.custom-toolbar {
+    background-color: #004f4f;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}

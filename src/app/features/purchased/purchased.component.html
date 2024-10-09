@@ -1,0 +1,12 @@
+<h3>Comprados</h3>
+
+<ul>
+    @for (product of products; track product.id) {
+        <li>
+            <section class="list-item">
+                <mat-checkbox [(ngModel)]="product.selected" (change)="moveToNotPurchased(product)">
+                    {{ product.name }}
+                </mat-checkbox>
+            </section>
+        </li>
+    }

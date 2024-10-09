@@ -1,0 +1,35 @@
+h3 {
+  color: #fff;
+}	
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px 0px 0px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px 0px 0px;
+}
+
+.input-container button {
+  margin: 10px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-bottom: 1px solid #808080;
+}
+
+.list-item button {
+  margin: 0px 0px 0px 10px;
+}
