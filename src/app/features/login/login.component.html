@@ -1,0 +1,7 @@
+<p>login works!</p>
+
+@if (!auth.isAuthenticated$) {
+    <button (click)="auth.loginWithRedirect()">
+        Log in
+    </button>
+}
